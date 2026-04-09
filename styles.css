@@ -1,6 +1,6 @@
 :root {
   --paper: #fffdf8;
-  --paper-shadow: #f8f2e6;
+  --paper-shadow: #fffdf8;
   --ink: #1b1715;
   --soft-ink: #544a43;
   --butter: #f4d88c;
@@ -27,7 +27,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(243, 180, 154, 0.22), transparent 28%),
     radial-gradient(circle at right 20%, rgba(244, 216, 140, 0.24), transparent 22%),
-    linear-gradient(180deg, var(--paper) 0%, #fffcf5 100%);
+    linear-gradient(180deg, var(--paper) 0%, #fffdf8 100%);
 }
 
 a {
@@ -134,9 +134,9 @@ h2 span,
 }
 
 .intro {
-  max-width: 920px;
+  max-width: 1150px;
   margin: 1.25rem auto 0;
-  font-size: clamp(1.12rem, 1.55vw, 1.4rem);
+  font-size: clamp(1.08rem, 1.50vw, 1.3rem);
   line-height: 1.18;
 }
 
@@ -151,7 +151,7 @@ h2 span,
   background:
     linear-gradient(180deg, rgba(255, 250, 239, 0.22), rgba(255, 250, 239, 0.22)),
     linear-gradient(180deg, var(--butter) 0%, #f3d38d 100%);
-  box-shadow: 0 18px 60px rgba(199, 156, 76, 0.15);
+  box-shadow: none;
 }
 
 .section-heading {
@@ -203,11 +203,12 @@ h2 {
 
 .date {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: inherit;
   font-size: clamp(0.84rem, 0.98vw, 0.94rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding-right: 0.35rem;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-right: 0.10rem;
 }
 
 .project p,
@@ -243,9 +244,7 @@ h2 {
 }
 
 .highlight-band {
-  background:
-    radial-gradient(circle at top right, rgba(243, 180, 154, 0.15), transparent 24%),
-    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(255, 251, 244, 0.98));
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(255, 251, 244, 0.98));
 }
 
 .plain-band {
@@ -265,6 +264,7 @@ h2 {
 .highlight-section h2 span {
   box-shadow: inset 0 -0.36em 0 var(--paper);
 }
+
 
 .footer {
   padding: 2rem 1.5rem 4rem;
