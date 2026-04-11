@@ -1,9 +1,9 @@
 :root {
-  --paper: #fffdf8;
-  --paper-shadow: #fffdf8;
+  --paper: #ffffff;
+  --paper-shadow: #ffffff;
   --ink: #1b1715;
   --soft-ink: #544a43;
-  --butter: #f4d88c;
+  --butter: #efd079;
   --butter-deep: #efc86d;
   --blush: #f3b49a;
   --rose: #d96f58;
@@ -22,12 +22,12 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Didot", "Bodoni MT", "Noto Serif Display", "Times New Roman", serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(243, 180, 154, 0.22), transparent 28%),
-    radial-gradient(circle at right 20%, rgba(244, 216, 140, 0.24), transparent 22%),
-    linear-gradient(180deg, var(--paper) 0%, #fffdf8 100%);
+    radial-gradient(circle at top left, rgba(243, 180, 154, 0.12), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(244, 216, 140, 0.14), transparent 22%),
+    linear-gradient(180deg, var(--paper) 0%, #fffefd 100%);
 }
 
 a {
@@ -67,6 +67,18 @@ a {
   line-height: 1;
 }
 
+.corner-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corner-icons img {
+  width: 2.9rem;
+  height: 2.9rem;
+  object-fit: contain;
+}
+
 .corner-icons {
   display: flex;
   gap: 0.75rem;
@@ -100,7 +112,12 @@ a {
 }
 
 .hero {
-  padding: 5rem 1.5rem 6rem;
+  width: 100%;
+  max-width: none;
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+  padding-left: clamp(3.6rem, 8vw, 6.2rem);
+  padding-right: clamp(3.6rem, 8vw, 6.2rem);
   text-align: center;
 }
 
@@ -123,7 +140,7 @@ h3,
 }
 
 h1 {
-  font-size: clamp(4rem, 8vw, 7rem);
+  font-size: clamp(2.6rem, 4.4vw, 5.2rem);
 }
 
 h1 span,
@@ -134,10 +151,21 @@ h2 span,
 }
 
 .intro {
-  max-width: 1150px;
+  width: 100%;
+  max-width: none;
   margin: 1.25rem auto 0;
-  font-size: clamp(1.08rem, 1.50vw, 1.3rem);
+  font-size: clamp(0.98rem, 1.28vw, 1.14rem);
   line-height: 1.18;
+  text-align: left;
+}
+
+.inline-doodle {
+  display: inline-block;
+  width: 1.45em;
+  height: 1.45em;
+  margin-right: 0.3rem;
+  vertical-align: -0.2em;
+  object-fit: contain;
 }
 
 .highlight-section {
@@ -145,8 +173,8 @@ h2 span,
   max-width: none;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
-  padding-left: max(0.1rem, calc((100vw - 1100px) / 2 + 0.1rem));
-  padding-right: max(0.7rem, calc((100vw - 1100px) / 2 + 0.7rem));
+  padding-left: clamp(3.6rem, 8vw, 6.2rem);
+  padding-right: clamp(3.6rem, 8vw, 6.2rem);
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(255, 250, 239, 0.22), rgba(255, 250, 239, 0.22)),
@@ -168,22 +196,26 @@ h2 {
 }
 
 .heading-icon {
-  font-size: 3.1rem;
+  font-size: 2.45rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .heading-icon img {
-  width: 3.1rem;
-  height: 3.1rem;
+  width: 2.45rem;
+  height: 2.45rem;
   object-fit: contain;
 }
 
+.experience + .experience,
+.education + .education,
 .project + .project {
   margin-top: 2rem;
 }
 
+.experience-head,
+.education-head,
 .project-head {
   display: flex;
   align-items: baseline;
@@ -193,43 +225,91 @@ h2 {
   padding-left: 0;
 }
 
-.project h3 {
-  font-size: clamp(1.3rem, 1.9vw, 1.65rem);
+.experience-head h3,
+.education-head h3,
+.project-head h3 {
+  margin-left: -0.4rem;
+}
+
+.experience-head h3 .inline-doodle,
+.education-head h3 .inline-doodle,
+.project-head h3 .inline-doodle,
+.project-icon img {
+  width: 1.75em;
+  height: 1.75em;
+  vertical-align: -0.28em;
+}
+
+.title-highlight-link {
+  display: inline;
+  text-decoration: none;
+  box-shadow: inset 0 -0.36em 0 var(--paper);
+}
+
+.title-butter-link {
+  display: inline;
+  text-decoration: none;
+  box-shadow: inset 0 -0.36em 0 var(--butter-deep);
+}
+
+.title-butter-highlight {
+  display: inline;
+  box-shadow: inset 0 -0.36em 0 var(--butter-deep);
 }
 
 .project-icon {
   color: var(--rose);
 }
 
+.project-icon img {
+  display: inline-block;
+  margin-left: 0.3rem;
+  object-fit: contain;
+}
+
+.experience p,
+.education p,
 .date {
   margin: 0;
+}
+
+.experience p,
+.education p,
+.project p,
+.footer p {
+  font-size: clamp(0.84rem, 0.98vw, 0.94rem);
+  line-height: 1.22;
+}
+
+.date {
   font-family: inherit;
   font-size: clamp(0.84rem, 0.98vw, 0.94rem);
   font-style: italic;
   letter-spacing: 0;
   text-transform: none;
-  padding-right: 0.10rem;
+  margin-right: 0;
+  padding-right: 0;
 }
 
-.project p,
-.footer p {
-  margin: 0;
-  font-size: clamp(0.84rem, 0.98vw, 0.94rem);
-  line-height: 1.22;
-}
-
-.project p {
-  padding-left: 0.35rem;
+.experience > p,
+.education > p,
+.project > p {
+  padding-left: 0;
+  margin-left: -0.4rem;
   max-width: 100%;
 }
 
 @media (max-width: 1100px) {
+  .experience-head,
+  .education-head,
   .project-head {
     padding-left: 0;
   }
 
-  .project p {
-    padding-left: 0.2rem;
+  .experience > p,
+  .education > p,
+  .project > p {
+    margin-left: 0;
     max-width: 100%;
   }
 }
@@ -239,8 +319,8 @@ h2 {
   max-width: none;
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
-  padding-left: max(0.1rem, calc((100vw - 1100px) / 2 + 0.1rem));
-  padding-right: max(0.7rem, calc((100vw - 1100px) / 2 + 0.7rem));
+  padding-left: clamp(3.6rem, 8vw, 6.2rem);
+  padding-right: clamp(3.6rem, 8vw, 6.2rem);
 }
 
 .highlight-band {
@@ -313,6 +393,8 @@ h2 {
     padding-right: 1rem;
   }
 
+  .experience-head,
+  .education-head,
   .project-head {
     flex-direction: column;
     align-items: flex-start;
